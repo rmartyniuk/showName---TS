@@ -1,30 +1,29 @@
+"use strict";
 function showMyName(name) {
     console.log(name);
 }
 showMyName('John');
 //dlaczego również poza nawiasem należało wpisać  ": number"???
+//odpowiedź: w celu określenia typu zwracanych danych
 function square(a) {
     return a * a;
 }
 square(10);
-function sum(title) {
-    var numbers = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        numbers[_i - 1] = arguments[_i];
-    }
+//this wskazuje na kontekst wykonywania funkcji. this nie zostanie potraktowane jako prawdziwy parametr funkcji ani nie zmieni kolejności paramterów. Więc właściwie w jakim celu go tu należy użyć?
+function sum(title, 
+//Czy "...numbers" oznacza wiele elementów typu liczbowego, które mają się znajdować w tablicy? Co oznaczają/na co wskazują te trzy kropeczki?
+...numbers) {
     return (title +
         ' = ' +
-        numbers.reduce(function (sum, num) {
-            return sum + num;
-        }, 0));
+        numbers.reduce((sum, num) => sum + num, 0));
 }
 sum('Numbers', 1, 6, 10);
-var executeFunc = function (func) {
-    var title = 'Lorem ipsum';
-    var age = 24;
-    var hobbies = ['sport', 'Movies'];
+const executeFunc = (func) => {
+    const title = 'Lorem ipsum';
+    const age = 24;
+    const hobbies = ['sport', 'Movies'];
     return func(title, age, hobbies);
 };
-executeFunc(function (title, age, hobbies) {
+executeFunc((title, age, hobbies) => {
     return true;
 });
