@@ -16,7 +16,7 @@ const executeFunc = (func) => {
     const title = 'Lorem ipsum';
     const age = 24;
     const hobbies = ['sport', 'Movies'];
-    return func(title, age, hobbies);
+    func(title, age, hobbies);
 };
 executeFunc((title, age, hobbies) => {
     return true;

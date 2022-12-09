@@ -1,4 +1,4 @@
-function showMyName(name: string) {
+function showMyName(name: string): void {
   console.log(name)
 }
 showMyName('John')
@@ -29,7 +29,7 @@ const executeFunc = (func: (
   const title: string = 'Lorem ipsum';
   const age: number = 24;
   const hobbies: string[] = ['sport', 'Movies'];
-  return func(title, age, hobbies)
+  func(title, age, hobbies)
 }
 executeFunc((title, age, hobbies) => {
   return true;
