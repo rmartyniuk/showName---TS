@@ -10,13 +10,8 @@ function square(a: number): number {
 square(10)
 
 
-function sum(title: string, ...numbers: number[]
-) {
-  return (title + ' = ' +
-    numbers.reduce((sum: number, num: number
-    ): number => sum + num, 0
-    )
-  );
+function sum(title: string, ...numbers: number[]): string {
+  return (title + ' = ' + numbers.reduce((sum: number, num: number): number => sum + num, 0));
 }
 sum('Numbers', 1, 6, 10)
 
@@ -25,7 +20,7 @@ const executeFunc = (func: (
   title: string,
   age: number,
   hobbies: string[]
-) => boolean) => {
+) => boolean): void => {
   const title: string = 'Lorem ipsum';
   const age: number = 24;
   const hobbies: string[] = ['sport', 'Movies'];
@@ -34,3 +29,4 @@ const executeFunc = (func: (
 executeFunc((title, age, hobbies) => {
   return true;
 })
+

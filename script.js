@@ -8,8 +8,7 @@ function square(a) {
 }
 square(10);
 function sum(title, ...numbers) {
-    return (title + ' = ' +
-        numbers.reduce((sum, num) => sum + num, 0));
+    return (title + ' = ' + numbers.reduce((sum, num) => sum + num, 0));
 }
 sum('Numbers', 1, 6, 10);
 const executeFunc = (func) => {
